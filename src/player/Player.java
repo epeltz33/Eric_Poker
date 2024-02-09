@@ -1,6 +1,7 @@
 
 package player;
 
+import cards.Card;
 import hand.Hand; // Import the Hand class from the hand package
 
 public class Player {
@@ -48,6 +49,10 @@ public class Player {
     // Setter for the Hand object, to replace the player's hand
     public void setHand(Hand hand) {
         this.hand = hand;
+    }
+
+    public void addCardToHand(Card card) {
+        this.hand.addCard(card);
     }
 
     @Override

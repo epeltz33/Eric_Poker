@@ -3,7 +3,7 @@ package hand;
 import java.util.ArrayList;
 import cards.Card;
 import helpers.PokerSolver;
- //import deck.Deck;
+ // import deck.Deck;
 
 public class Hand {
 	private ArrayList<Card> cards;
@@ -98,21 +98,23 @@ public class Hand {
 		Card tempCard = cards.remove(index);
 		
 		//Send the card to the deck using the Deck class' addDiscard method 
-		deck.addUsedCards(tempCard);
+		//deck.addUsedCards(tempCard);
 	}
 	
-	public void discardAll(Deck deck) {
-		
+	/*public void discardAll(Deck deck) {
+
 		//Loop until the cards attribute (the hand) is empty
 		while(cards.size() > 0) {
 			//Remove the card at the 0 index from the hand
 			Card tempCard = cards.remove(0);
-					
-			//Send the card to the deck using the Deck class' addDiscard method 
+
+			//Send the card to the deck using the Deck class' addDiscard method
 			deck.addUsedCards(tempCard);
 		}
 	}
-	
+	*/
+
+
 	@Override
 	public String toString() {
 		String handString = "";

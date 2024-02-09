@@ -1,34 +1,53 @@
 // Assume necessary imports for Player and Card classes
 import player.Player;
 import cards.Card;
-import java.util.ArrayList;
-import java.util.Collections;
+//import hand.Hand;
+import java.util.Random;
+
 
 public class Assignment1_2 {
     public static void main(String[] args) {
-        ArrayList<Card> deck = new ArrayList<>(52);
-        for (int i = 1; i <= 52; i++) {
-            deck.add(new Card(i));
+        Card[] deck = new Card[52];
+        for (int i = 0; i < deck.length; i++) {
+            deck[i] = new Card(i + 1);
         }
 
-        Collections.shuffle(deck);
+        // shuffle deck
+        shuffleDeck(deck);
 
+        for (int i = 0; i < deck.length; i++) {
+            System.out.print(deck[i] + "\t"); // Print the card and a tab space
+            if ((i + 1) % 13 == 0) { // After every 13 cards, move to a new line
+                System.out.println();
+            }
+        }
+
+        // initialize players
         Player fastFreddy = new Player("9765467", "FastFreddy", 2650);
         Player oneEyedJack = new Player("2435573", "OneEyedJack", 1400);
 
-        for (int i = 0; i < 5; i++) {
-            fastFreddy.getHand().addCard(deck.remove(0));
-            oneEyedJack.getHand().addCard(deck.remove(0));
+        // deal 5 cards to each player
+        for(int i = 0; i < 5; i++) {
+            fastFreddy.addCardToHand(deck[i * 2]);
+            oneEyedJack.addCardToHand(deck[i * 2 + 1]);
         }
 
-        fastFreddy.getHand().evaluateHand();
-        oneEyedJack.getHand().evaluateHand();
-
+        // Evaluate hands and print hands
         printPlayerHand(fastFreddy);
         printPlayerHand(oneEyedJack);
 
-        // Compare hands and announce a winner
+        // Compare hands and print winner
         announceWinner(fastFreddy, oneEyedJack);
+    }
+
+    private static void shuffleDeck(Card[] deck) {
+        Random rand = new Random();
+        for (int i = 0; i < deck.length; i++) {
+            int randomIndex = rand.nextInt(deck.length);
+            Card temp = deck[i];
+            deck[i] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
     }
 
     private static void printPlayerHand(Player player) {
@@ -47,3 +66,5 @@ public class Assignment1_2 {
         }
     }
 }
+
+
