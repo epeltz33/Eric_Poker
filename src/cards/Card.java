@@ -1,14 +1,14 @@
 package cards;
 
 public class Card {
-    private final int cardNumber;
-    private String suit;
-    private int suitIndex;
-    private String color;
-    private int cardRank;
-    private String face;
-    private String cardImage;
-    private static int cardsCreated = 0;
+    protected int cardNumber;
+    protected String suit;
+    protected int suitIndex;
+    protected String color;
+    protected int cardRank;
+    protected String face;
+    protected String cardImage;
+    protected static int cardsCreated = 0;
 
     public Card(int cardNumber) {
         this.cardNumber = cardNumber;
