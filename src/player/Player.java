@@ -1,7 +1,7 @@
 
 package player;
 
-import cards.Card;
+import cards.UnoCard;
 import hand.Hand; // Import the Hand class from the hand package
 
 public class Player {
@@ -22,7 +22,7 @@ public class Player {
         this(id, name, 1000);
     }
 
-    public Player() {
+    public Player(String s) {
         this("00000", "Guest", 1000);
     }
 
@@ -58,8 +58,11 @@ public class Player {
 
      */
 
-    @Override
-    public String toString() {
-        return String.format("%s %s %d", id, name, bank);
-    }
-}
+//    @Override
+//    public String toString() {
+//        return String.format("%s %s %d", id, name, bank);
+//    }
+//
+//    public void addCardToHand(UnoCard unoCard) {
+//    }
+//}
