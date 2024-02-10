@@ -13,14 +13,17 @@ public class Assignment1_2 {
         }
 
         // shuffle deck
+        System.out.println("Shuffled Deck:");
         shuffleDeck(deck);
 
         for (int i = 0; i < deck.length; i++) {
             System.out.print(deck[i] + "\t"); // Print the card and a tab space
             if ((i + 1) % 13 == 0) { // After every 13 cards, move to a new line
                 System.out.println();
+
             }
         }
+        System.out.println();
 
         // initialize players
         Player fastFreddy = new Player("9765467", "FastFreddy", 2650);
@@ -36,10 +39,12 @@ public class Assignment1_2 {
         }
 
         // Evaluate hands and print hands
+        System.out.println("\n5 Card Poker:");
         printPlayerHand(fastFreddy);
         printPlayerHand(oneEyedJack);
 
         // Compare hands and print winner
+        System.out.println("\n Card Poker Results:");
         announceWinner(fastFreddy, oneEyedJack);
     }
 
@@ -53,19 +58,24 @@ public class Assignment1_2 {
         }
     }
 
+
     private static void printPlayerHand(Player player) {
-        System.out.println(player.getName() + "'s hand: " + player.getHand());
-        System.out.println("Description: " + player.getHand().getHandDescr());
+        System.out.println(player.getName() + "'s Hand:");
+        for (int i = 0; i < 5; i++) {
+            System.out.print(player.getHand().getCard(i) + "\t");
+        }
+        System.out.println();
     }
+
 
     private static void announceWinner(Player player1, Player player2) {
         int result = player1.getHand().compareHand(player2.getHand());
         if (result > 0) {
-            System.out.println(player1.getName() + " wins!");
+            System.out.println("Results: " + player1.getName() + " wins!");
         } else if (result < 0) {
-            System.out.println(player2.getName() + " wins!");
+            System.out.println("Results: " + player2.getName() + " wins!");
         } else {
-            System.out.println("It's a tie!");
+            System.out.println("Results: It's a tie!");
         }
     }
 }

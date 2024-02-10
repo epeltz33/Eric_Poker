@@ -17,8 +17,8 @@ public class Card {
     }
 
     private void createCard() { // something in this method causing the error I think
-        this.suitIndex = cardNumber % 13;
-        System.out.println("CardNumber: " + cardNumber + ", Suit Index: " + this.suitIndex); // Debugging Print
+        this.suitIndex = cardNumber % 4;
+        //System.out.println("CardNumber: " + cardNumber + ", Suit Index: " + this.suitIndex); // Debugging Print
         this.suit = new String[]{"c", "d", "h", "s"}[this.suitIndex]; // Updated array order
         if (suitIndex < 2) this.color = "b";
         else this.color = "r";
@@ -48,6 +48,12 @@ public class Card {
     public int getCardRank() { return cardRank; }
     public String getFace() { return face; }
     public String getCardImage() { return cardImage; }
+
+    @Override
+    public String toString() {
+        return String.format("%s%s", face, suit);
+    }
+
 
 
 

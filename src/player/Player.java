@@ -13,6 +13,7 @@ public class Player {
     public Player(String id, String name, int bank) {
         this.id = id;
         this.name = name;
+        System.out.println("Player " + name + " created with bank " + bank); // Debugging Print
         this.bank = bank;
         this.hand = new Hand(); // Initialize the Hand object
     }
