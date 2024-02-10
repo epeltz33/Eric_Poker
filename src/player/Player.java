@@ -51,9 +51,11 @@ public class Player {
         this.hand = hand;
     }
 
-    public void addCardToHand(Card card) {
+    /*public void addCardToHand(Card card) {
         this.hand.addCard(card);
     }
+
+     */
 
     @Override
     public String toString() {

@@ -1,7 +1,7 @@
 
 import player.Player;
 import cards.Card;
-//import hand.Hand;
+import hand.Hand;
 import java.util.Random;
 
 
@@ -27,9 +27,12 @@ public class Assignment1_2 {
         Player oneEyedJack = new Player("2435573", "OneEyedJack", 1400);
 
         // deal 5 cards to each player
-        for(int i = 0; i < 5; i++) {
-            fastFreddy.addCardToHand(deck[i * 2]);
-            oneEyedJack.addCardToHand(deck[i * 2 + 1]);
+        int cardIndex = 0;
+        for (int i = 0; i < 5; i++) {
+            fastFreddy.getHand().addCard(deck[cardIndex]); // Deal to FastFreddy's hand
+            cardIndex++;
+            oneEyedJack.getHand().addCard(deck[cardIndex]); // Deal to OneEyedJack's hand
+            cardIndex++;
         }
 
         // Evaluate hands and print hands
