@@ -12,7 +12,7 @@ public class Card {
 
     public Card(int cardNumber) {
         this.cardNumber = cardNumber;
-        createCard(); // Correction 1: Call createCard from constructor
+        createCard();
         cardsCreated++;
     }
 
@@ -48,48 +48,6 @@ public class Card {
     public String getFace() { return face; }
     public String getCardImage() { return cardImage; }
 
-    // toString method to print the card
-    @Override
-    public String toString() {
-        String rankString;
-        switch (this.cardRank) {
-            case 1:
-                rankString = "A";
-                break;
-            case 11:
-                rankString = "J";
-                break;
-            case 12:
-                rankString = "Q";
-                break;
-            case 13:
-                rankString = "K";
-                break;
-            default:
-                rankString = String.valueOf(this.cardRank);
-                break;
-        }
 
-        String suitSymbol;
-        switch (this.suit) {
-            case "s":
-                suitSymbol = "Spades";
-                break;
-            case "h":
-                suitSymbol = "Hearts";
-                break;
-            case "d":
-                suitSymbol = "Diamonds";
-                break;
-            case "c":
-                suitSymbol = "Clubs";
-                break;
-            default:
-                suitSymbol = "Unknown";
-                break;
-        }
-
-        return rankString + " of " + suitSymbol;
-    }
 
 }
