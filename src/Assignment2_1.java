@@ -48,13 +48,13 @@ public class Assignment2_1 {
         // print hands
         System.out.println("\n" + fastFreddy.getName() + "'s Hand:");
         for (int i = 0; i < fastFreddy.getHand().getCards().length; i++) {
-            System.out.print(fastFreddy.getHand().getCards()[i] + "\t");
+            System.out.print(fastFreddy.getHand().getCards()[i] + " ");
         }
         System.out.println("\n");
 
         System.out.println("\n" + oneEyedJack.getName() + "'s Hand:");
         for (int i = 0; i < oneEyedJack.getHand().getCards().length; i++) {
-            System.out.print(oneEyedJack.getHand().getCards()[i] + "\t");
+            System.out.print(oneEyedJack.getHand().getCards()[i] + " ");
         }
         System.out.println("\n\n\n");
 
@@ -65,7 +65,7 @@ public class Assignment2_1 {
             if (i != 0 && i % 13 == 0) {
                 System.out.println();
             }
-            System.out.print(deck[i] + "\t");
+            System.out.print(deck[i] + " ");
         }
     }
 
