@@ -1,7 +1,5 @@
 
 package player;
-
-import cards.UnoCard;
 import hand.Hand; // Import the Hand class from the hand package
 
 public class Player {
@@ -13,17 +11,17 @@ public class Player {
     public Player(String id, String name, int bank) {
         this.id = id;
         this.name = name;
-        System.out.println("Player " + name + " created with bank " + bank); // Debugging Print
+        // System.out.println("Player " + name + " created with bank " + bank); // Debugging Print
         this.bank = bank;
-        this.hand = new Hand(); // Initialize the Hand object
+        hand = new Hand(); // Initialize the Hand object
+    }
+
+    public Player() {
+        this("0000", "Guest", 1000);
     }
 
     public Player(String id, String name) {
         this(id, name, 1000);
-    }
-
-    public Player(String s) {
-        this("00000", "Guest", 1000);
     }
 
     public String getId() {
@@ -47,22 +45,7 @@ public class Player {
         return hand;
     }
 
-    // Setter for the Hand object, to replace the player's hand
-    public void setHand(Hand hand) {
-        this.hand = hand;
+    public String toString() {
+    return "Player: " + name + ", id: " + id + " has a bank of " + bank;
     }
-
-    /*public void addCardToHand(Card card) {
-        this.hand.addCard(card);
-    }
-
-     */
-
-//    @Override
-//    public String toString() {
-//        return String.format("%s %s %d", id, name, bank);
-//    }
-//
-//    public void addCardToHand(UnoCard unoCard) {
-//    }
-//}
+}

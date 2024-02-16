@@ -2,57 +2,79 @@ import cards.Card;
 import cards.UnoCard;
 import player.Player;
 
-import java.util.Random;
 
 public class Assignment2_1 {
     public static void main(String[] args) {
-        // Create arrays for decks
         Card[] deck = new Card[52];
-        UnoCard[] unoDeck = new UnoCard[108];
-
-        // Create the standard and Uno cards
         for (int i = 0; i < deck.length; i++) {
-            deck[i] = new Card(i + 1);
+            deck[i] = new Card((i + 1));
         }
+        // array to hold uno cards
+        UnoCard[] unoDeck = new UnoCard[108];
         for (int i = 0; i < unoDeck.length; i++) {
-            unoDeck[i] = new UnoCard(i + 1);
+            unoDeck[i] = new UnoCard((i + 1));
         }
-
-        // Print and shuffle
+        // print the deck of cards
+        System.out.println("Standard Deck: ");
         printDeck(deck);
+
+        System.out.println("\n\nUno Deck:");
         printDeck(unoDeck);
 
         shuffleDeck(deck);
         shuffleDeck(unoDeck);
 
+        // print shuffled deck
+        System.out.println("\n\nShuffled Standard Deck: ");
         printDeck(deck);
+
+        System.out.println("\n\nShuffled Uno Deck: ");
         printDeck(unoDeck);
 
-        // Create Players
-        Player player1 = new Player("Player 1");
-        Player player2 = new Player("Player 2");
+        System.out.println();
 
-        // Deal Uno Cards to player1 and Cards to player2
+        // create player objects
+        Player fastFreddy = new Player("9765467", "FastFreddy", 2650);
+        Player oneEyedJack = new Player("2435573", "OneEyedJack", 1400);
 
-        // Display Player Hands
-        System.out.println("\nPlayer 1's Hand:");
-        System.out.println(player1.getHand());
-        System.out.println("\nPlayer 2's Hand:");
-        System.out.println(player2.getHand());
+        //Deal 7 Uno cards to freddy (player 1)
+        for (int i = 0; i < 7; i++) {
+            fastFreddy.getHand().addCard(unoDeck[i]);
+        }
+        //Deal 5 standard cards to oneEyedJack (player 2)
+        for (int i = 0; i < 5; i++) {
+            oneEyedJack.getHand().addCard(deck[i]);
+        }
+        // print hands
+        System.out.println("\n" + fastFreddy.getName() + "'s Hand:");
+        for (int i = 0; i < fastFreddy.getHand().getCards().length; i++) {
+            System.out.print(fastFreddy.getHand().getCards()[i] + "\t");
+        }
+        System.out.println("\n");
+
+        System.out.println("\n" + oneEyedJack.getName() + "'s Hand:");
+        for (int i = 0; i < oneEyedJack.getHand().getCards().length; i++) {
+            System.out.print(oneEyedJack.getHand().getCards()[i] + "\t");
+        }
+        System.out.println("\n\n\n");
+
     }
 
-    // Helper Methods
     private static void printDeck(Card[] deck) {
-        for (Card card : deck) {
-            System.out.println(card);
+        for (int i = 0; i < deck.length; i++) {
+            if (i != 0 && i % 13 == 0) {
+                System.out.println();
+            }
+            System.out.print(deck[i] + "\t");
         }
     }
 
     private static void shuffleDeck(Card[] deck) {
-        Random rand = new Random();
+        Card temp;
+        int randomIndex;
         for (int i = 0; i < deck.length; i++) {
-            int randomIndex = rand.nextInt(deck.length);
-            Card temp = deck[i];
+            randomIndex = (int) (Math.random() * deck.length);
+            temp = deck[i];
             deck[i] = deck[randomIndex];
             deck[randomIndex] = temp;
         }

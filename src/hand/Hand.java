@@ -68,13 +68,6 @@ public class Hand {
 		return gameResults(otherHand);
 	}
 
-	public int compareHand(Hand otherHand, String game) {
-		//First evaluate each hand
-		evaluateHand(game);  //This hand object
-		otherHand.evaluateHand(game);
-
-		return gameResults(otherHand);
-	}
 
 	private int gameResults(Hand otherHand) {
 		int thisHandResult;
@@ -92,16 +85,16 @@ public class Hand {
 		return thisHandResult;
 	}
 
-	// public void discard(Deck deck, int index) {
+	/*public void discard(Deck deck, int index) {
 
 		//Remove the card designated by index from the hand
-		//Card tempCard = cards.remove(index);
+		 Card tempCard = cards.remove(index);
 
 		//Send the card to the deck using the Deck class' addDiscard method
-		//deck.addUsedCards(tempCard);
-	//}
+		deck.addUsedCards(tempCard);
+	}
 
-	/*public void discardAll(Deck deck) {
+	public void discardAll(Deck deck) {
 
 		//Loop until the cards attribute (the hand) is empty
 		while(cards.size() > 0) {
@@ -112,7 +105,7 @@ public class Hand {
 			deck.addUsedCards(tempCard);
 		}
 	}
-	*/
+*/
 
 
 	@Override
