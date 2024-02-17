@@ -1,5 +1,5 @@
-
 package player;
+
 import hand.Hand; // Import the Hand class from the hand package
 
 public class Player {

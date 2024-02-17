@@ -21,12 +21,12 @@ public class UnoCard extends Card {
     }
 
 
-    public void setColor() {
+    private void setColor() {
         if (cardNumber > 96) {
             setLastCardsColor();
             return;
         }
-        int colorNum = (cardNumber - 1) / 24;
+        int colorNum = (int) ((cardNumber - 1) / 24);
         switch (colorNum) {
             case 0:
                 color = "r";
@@ -74,7 +74,7 @@ public class UnoCard extends Card {
         skip = false; // overridden by skip card (10)
         wild = false; // overridden by wild card (13)
 
-        int cardRank = (cardNumber - 1) % 12 + 1;
+        int cardRank = ((cardNumber - 1) % 12) + 1;
 
         switch (cardRank) {
             case 1:
@@ -111,13 +111,13 @@ public class UnoCard extends Card {
         wild = false;
 
         switch (cardNumber) {
-            case 97:
+            case 97: // "0" cards
             case 98:
             case 99:
             case 100:
                 face = "0";
                 break;
-            case 101:
+            case 101: // wild cards
             case 102:
             case 103:
             case 104:
@@ -137,7 +137,7 @@ public class UnoCard extends Card {
         if (wild) {
             return face;
         } else {
-            return color + face;
+            return face + color;
         }
     }
 
