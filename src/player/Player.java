@@ -16,7 +16,7 @@ public class Player {
         hand = new Hand(); // Initialize the Hand object
     }
 
-    public Player() {
+    public Player(String s) {
         this("0000", "Guest", 1000);
     }
 
