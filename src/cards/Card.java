@@ -17,7 +17,7 @@ public class Card {
         cardsCreated++;
     }
 
-    private void createCard() { // something in this method causing the error I think
+    protected void createCard() { // something in this method causing the error I think
         this.suitIndex = (int) ((cardNumber - 1) / 13);
         //System.out.println("CardNumber: " + cardNumber + ", Suit Index: " + this.suitIndex); // Debugging Print
         this.cardRank = ((cardNumber - 1) % 13) + 1;
@@ -51,6 +51,8 @@ public class Card {
 
         }
     }
+
+    //public abstract void createCard();
 
     private void setCardValues() {
         switch (this.cardRank) {
