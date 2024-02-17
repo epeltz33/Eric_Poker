@@ -8,7 +8,7 @@ public class UnoCard extends Card {
     private boolean skip;
 
     public UnoCard(int cardNumber) {
-        super(cardNumber); // Call the constructor of the parent 'Card' class
+        super(cardNumber); // Call the constructor of the superclass (Card) with the cardNumber parameter
     }
 
 
@@ -68,7 +68,7 @@ public class UnoCard extends Card {
             setLastCardsValues();
             return;
         }
-        // defaults
+
         drawAmount = 0;
         reverse = false; // overridden by reverse card (11)
         skip = false; // overridden by skip card (10)
@@ -104,7 +104,7 @@ public class UnoCard extends Card {
     }
 
     private void setLastCardsValues() {
-        // defaults
+
         drawAmount = 0;
         reverse = false;
         skip = false;
@@ -117,7 +117,7 @@ public class UnoCard extends Card {
             case 100:
                 face = "0";
                 break;
-            case 101: // wild cards
+            case 101: // wild
             case 102:
             case 103:
             case 104:
@@ -137,7 +137,7 @@ public class UnoCard extends Card {
         if (wild) {
             return face;
         } else {
-            return face + color;
+            return face + color; // the whole time I had this backwards... I was returning color + face ... so frustrating
         }
     }
 
