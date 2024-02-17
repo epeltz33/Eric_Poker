@@ -3,7 +3,7 @@ package hand;
 import java.util.ArrayList;
 import cards.Card;
 import helpers.PokerSolver;
-//import deck.Deck;
+import deck.Deck;
 
 public class Hand {
 	private ArrayList<Card> cards;
@@ -85,7 +85,7 @@ public class Hand {
 		return thisHandResult;
 	}
 
-	/*public void discard(Deck deck, int index) {
+	public void discard(Deck deck, int index) {
 
 		//Remove the card designated by index from the hand
 		 Card tempCard = cards.remove(index);
@@ -105,7 +105,7 @@ public class Hand {
 			deck.addUsedCards(tempCard);
 		}
 	}
-*/
+
 
 
 	@Override
