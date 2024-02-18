@@ -8,7 +8,7 @@ public class Deck {
     private ArrayList<Card> cards;
     private ArrayList<Card> usedCards;
 
-    public Deck() {
+    public Deck(int i) {
         this.cards = new ArrayList<>();
         this.usedCards = new ArrayList<>();
         initializeDeck();
