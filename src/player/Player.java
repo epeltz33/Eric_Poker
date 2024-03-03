@@ -1,5 +1,6 @@
 package player;
-
+import cards.Card;
+import cards.StandardCard;
 import hand.Hand; // Import the Hand class from the hand package
 
 public class Player {
@@ -45,7 +46,15 @@ public class Player {
         return hand;
     }
 
+    public void printCardRanks() {
+        System.out.print(name + "'s Card Ranks: ");
+        for (Card card : hand.getCards()) {
+            System.out.print(((StandardCard) card).getCardRank() + " ");
+        }
+        System.out.println();
+    }
+
     public String toString() {
-    return "Player: " + name + ", id: " + id + " has a bank of " + bank;
+        return "Player: " + name + ", id: " + id + " has a bank of " + bank;
     }
 }

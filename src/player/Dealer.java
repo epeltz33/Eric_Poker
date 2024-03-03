@@ -1,13 +1,14 @@
 package player;
 
 import cards.Card;
+import cards.StandardCard;
 import deck.Deck;
 import hand.Hand;
 
 public class Dealer extends Player{
     private Deck deck;
 
-    public Dealer(Deck deck) {
+    public Dealer(Deck deck, String name) {
         super("dealer", "Dealer" + randomDealer(), 0);
         this.deck = deck;
         prepareDeck();
@@ -30,8 +31,8 @@ public class Dealer extends Player{
     public boolean reshuffleDeck() {
 
         //Get the deck's cards and usedCards
-        Card[] cards = deck.getCards();
-        Card[] discardPile = deck.getUsedCards();
+        Card[] cards = deck.getCards().toArray(new Card[0]);
+        Card[] discardPile = deck.getUsedCards().toArray(new Card[0]);
 
         //Now do the math
         int totalCards = cards.length + discardPile.length;
@@ -49,7 +50,7 @@ public class Dealer extends Player{
     }
 
     public void takeUsedCard(Player player, int index) {
-        Card card = player.getHand().getCard(index);
+        StandardCard card = (StandardCard)player.getHand().removeCard(index);
         deck.addUsedCards(card);
     }
 

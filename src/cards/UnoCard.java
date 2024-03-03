@@ -11,13 +11,18 @@ public class UnoCard extends Card {
         super(cardNumber); // Call the constructor of the superclass (Card) with the cardNumber parameter
     }
 
+    @Override
+    void setCardImage() {
+
+    }
+
 
     @Override
     public void createCard() {
         setColor();
         setCardValues();
 
-        super.setCardImage(); // in card class
+        // in card class
     }
 
 

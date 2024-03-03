@@ -1,13 +1,14 @@
 import cards.Card;
+import cards.StandardCard;
 import cards.UnoCard;
 import player.Player;
 
 
 public class Assignment2_1 {
     public static void main(String[] args) {
-        Card[] deck = new Card[52];
+        StandardCard[] deck = new StandardCard[52];
         for (int i = 0; i < deck.length; i++) {
-            deck[i] = new Card((i + 1));
+            deck[i] = new StandardCard((i + 1));
         }
         // array to hold uno cards
         UnoCard[] unoDeck = new UnoCard[108];
@@ -78,5 +79,10 @@ public class Assignment2_1 {
             deck[i] = deck[randomIndex];
             deck[randomIndex] = temp;
         }
-    }
+
+
+
+
+}
+
 }

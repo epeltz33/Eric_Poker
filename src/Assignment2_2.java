@@ -7,7 +7,7 @@ public class Assignment2_2 {
     public static void main(String[] args) {
 
         // Create the dealer with new deck of 52 cards
-        Dealer dealer = new Dealer(new Deck(52));
+        Dealer dealer = new Dealer(new Deck(52),  "Dealer");
 
         System.out.println("Initial Deck: \n" + dealer.getDeck());
 
@@ -23,7 +23,7 @@ public class Assignment2_2 {
 
 
         // Display hands and determine the winner
-        System.out.println("\n\nEric's hand: " + eric.getHand());
+        System.out.println("\n\nPlayer's hand: " + eric.getHand());
         System.out.println("\n\nDealer's hand: " + dealer.getHand());
 
 
