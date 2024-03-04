@@ -60,13 +60,21 @@ public class Assignment2_3 {
         System.out.println("\n\nAfter discard Deck: ");
         printDeck(dealer.getDeck());
 
+        // Print used cards ofr both player and dealer
+        System.out.println("Used Cards: ");
+        for (StandardCard card : dealer.getDeck().getUsedCards()) {
+            System.out.print(card + "  ");
+        }
+
         // Restack the deck
         dealer.getDeck().restack();
 
         // Print the deck again. The deck should be whole again.
         System.out.println("\n\nAfter restock Deck: ");
         printDeck(dealer.getDeck());
+
     }
+
 
     private static void printDeck(Deck deck) {
         int cardsPerRow = 13;

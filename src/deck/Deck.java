@@ -33,12 +33,10 @@ public class Deck {
     public StandardCard dealCard(int index) {
         if (index >= 0 && index < cards.size()) {
             StandardCard card = cards.remove(index);
-            usedCards.add(card);
             return card;
         }
         return null;
     }
-
     public void addUsedCards(StandardCard card) {
         usedCards.add(card);
     }
