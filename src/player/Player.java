@@ -1,7 +1,7 @@
 package player;
 import cards.Card;
 import cards.StandardCard;
-import hand.Hand; // Import the Hand class from the hand package
+import hand.Hand;
 
 public class Player {
     private String id;
@@ -48,10 +48,10 @@ public class Player {
 
     public void printCardRanks() {
         System.out.print(name + "'s Card Ranks: ");
-        for (Card card : hand.getCards()) {
-            System.out.print(((StandardCard) card).getCardRank() + " ");
+        for (int rank : hand.getCardRanks()) {
+            System.out.print(rank + " ");
         }
-        System.out.println();
+        System.out.println("\n"); // Add an extra newline here
     }
 
     public String toString() {

@@ -110,14 +110,12 @@ public class Hand {
 
 	@Override
 	public String toString() {
-		String handString = "";
-
-		for(int i=0; i<cards.size(); i++) {
-			//Call to the Card object's getString to get Card info
-			handString += cards.get(i) + " ";
+		String result = "";
+		for (Card card : this.cards) {
+			result += card.toString() + " ";
 		}
-
-		return handString;
+		result += "     " + this.getHandDescr();
+		return result;
 	}
 
 	//The typical getters/setters
@@ -161,5 +159,17 @@ public class Hand {
 	public void setAltCards(int[] altCards) {
 		this.altCards = altCards;
 	}
+
+
+	public int[] getCardRanks() {
+		int[] cardRanks = new int[cards.size()];
+		for (int i = 0; i < cards.size(); i++) {
+			StandardCard standardCard = (StandardCard) cards.get(i);
+			cardRanks[i] = standardCard.getCardRank();
+		}
+		return cardRanks;
+
+
+}
 
 }

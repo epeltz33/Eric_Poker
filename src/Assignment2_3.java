@@ -3,6 +3,9 @@ import deck.Deck;
 import player.Dealer;
 import player.Player;
 import cards.StandardCard;
+import hand.Hand;
+
+import java.util.Arrays;
 
 public class Assignment2_3 {
     public static void main(String[] args) {
@@ -32,7 +35,10 @@ public class Assignment2_3 {
         dealer.getHand().evaluateHand();
 
         // Display the player and dealer hands, including hand description
-        System.out.println("\n\nFastFreddy's hand: " + player.getHand());
+System.out.println("\n\nFastFreddy's Hand: " + player.getHand().getHandDescr());
+        System.out.println(player.getHand());
+        System.out.println("\n\n" + dealer.getName() + "'s Hand: " + dealer.getHand().getHandDescr());
+        System.out.println(dealer.getHand());
 
 
         // Display the player and dealer card ranks
@@ -44,7 +50,7 @@ public class Assignment2_3 {
         if(result > 0) {
             System.out.println("\n\nFastFreddy wins!");
         } else if(result < 0) {
-            System.out.println("\n\nDealer Eric wins!");
+            System.out.println("\n\n" + dealer.getName() + " wins!");
         } else {
             System.out.println("\n\nIt's a tie!");
         }
@@ -69,10 +75,11 @@ public class Assignment2_3 {
         int cardsPerRow = 13;
         for (int i = 0; i < deck.getCards().size(); i++) {
             if (i != 0 && i % cardsPerRow == 0) {
-                System.out.println();
+                System.out.println(); // Line break for formatting
             }
-            System.out.print(deck.getCards().get(i) + " ");
+            System.out.print(deck.getCards().get(i) + "  "); // Add extra spaces
         }
         System.out.println();
     }
+
 }
