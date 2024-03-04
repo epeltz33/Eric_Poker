@@ -35,11 +35,8 @@ public class Assignment2_3 {
         dealer.getHand().evaluateHand();
 
         // Display the player and dealer hands, including hand description
-System.out.println("\n\nFastFreddy's Hand: " + player.getHand().getHandDescr());
-        System.out.println(player.getHand());
-        System.out.println("\n\n" + dealer.getName() + "'s Hand: " + dealer.getHand().getHandDescr());
-        System.out.println(dealer.getHand());
-
+        System.out.println("\n\nFastFreddy's Hand: " + player.getHand().toString());
+        System.out.println("\n\n" + dealer.getName() + "'s Hand: " + dealer.getHand().toString());
 
         // Display the player and dealer card ranks
         player.printCardRanks();
